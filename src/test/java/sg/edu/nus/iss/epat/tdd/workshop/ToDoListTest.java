@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.Collection;
 
@@ -18,6 +17,7 @@ public class ToDoListTest  {
     private final String DESC1 = "desc 1";
     private final String DESC2 = "desc 2";
     private final String DESC3 = "desc 3";
+
     private Task task1;
     private Task task2;
     private Task task3;
@@ -46,6 +46,12 @@ public class ToDoListTest  {
     public void testAddTask() {
         todoList.addTask(task1);
         assertEquals(1,todoList.getAllTasks().size());
+    }
+
+        @Test
+    public void testAddNullTask() {
+        todoList.addTask(null);
+        assertEquals(0,todoList.getAllTasks().size());
     }
 
     @Test
