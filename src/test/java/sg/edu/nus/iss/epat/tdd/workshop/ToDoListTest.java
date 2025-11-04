@@ -25,6 +25,7 @@ public class ToDoListTest  {
 
     @Test
     public void testAddTask() {
+        ToDoList ToDoList = new ToDoList();
         fail("Not implemented yet");
     }
 
