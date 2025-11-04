@@ -5,7 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import java.util.Collection;
 
 public class ToDoListTest  {
     // Define Test Fixtures
@@ -55,11 +60,29 @@ public class ToDoListTest  {
 
     @Test
     public void testRemoveTask() {
-        //fail("Not implemented yet");
+
+      todoList.addTask(task1);
+      todoList.addTask(task2);
+
+      todoList.removeTask(DESC1);
+      assertNull(todoList.getTask(DESC1));
+      assertEquals(task2, todoList.getTask(DESC2));
     }
 
     @Test
     public void testGetCompletedTasks() {
         //fail("Not implemented yet");
+      todoList.addTask(task1);
+      todoList.addTask(task2);
+      todoList.addTask(task3);
+      
+      todoList.completeTask(DESC1);
+      todoList.completeTask(DESC3);
+
+      Collection<Task> tasks = todoList.getCompletedTasks();
+      assertEquals(2, tasks.size());
+      assertTrue(tasks.contains(task1));
+      assertFalse(tasks.contains(task2));
+      assertTrue(tasks.contains(task3));
     }
 }
