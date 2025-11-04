@@ -45,16 +45,21 @@ public class ToDoListTest  {
 
     @Test
     public void testGetStatus() {
-        fail("Not implemented yet");
+
+        todoList.addTask(task1);
+        assertEquals(false, todoList.getStatus(DESC1));
+        todoList.completeTask(DESC1);
+        assertEquals(true, todoList.getStatus(DESC1));
+        //fail("Not implemented yet");
     }
 
     @Test
     public void testRemoveTask() {
-        fail("Not implemented yet");
+        //fail("Not implemented yet");
     }
 
     @Test
     public void testGetCompletedTasks() {
-        fail("Not implemented yet");
+        //fail("Not implemented yet");
     }
 }
