@@ -4,10 +4,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class ToDoListTest  {
     // Define Test Fixtures
+
+    private final String DESC1 = "desc 1";
+    private final String DESC2 = "desc 2";
+    private final String DESC3 = "desc 3";
+    private Task task1;
+    private Task task2;
+    private Task task3;
+    private ToDoList todoList;
 
     public ToDoListTest() {
         super();
@@ -16,6 +25,11 @@ public class ToDoListTest  {
     @Before
     public void setUp() throws Exception {
         // Initialise Test Fixtures
+        task1 = new Task(DESC1);
+        task2 = new Task(DESC2);
+        task3 = new Task(DESC3);
+        
+        todoList = new ToDoList();
     }
 
     @After
@@ -25,8 +39,8 @@ public class ToDoListTest  {
 
     @Test
     public void testAddTask() {
-        ToDoList ToDoList = new ToDoList();
-        fail("Not implemented yet");
+        todoList.addTask(task1);
+        assertEquals(1,todoList.getAllTasks().size());
     }
 
     @Test

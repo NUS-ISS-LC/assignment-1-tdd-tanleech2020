@@ -7,6 +7,7 @@ public class ToDoList {
 
    public void addTask(Task task) {
       // Add code here
+      tasks.put(task.getDescription(), task);
    }
 
    public void completeTask(String description) {
